@@ -1,0 +1,21 @@
+import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import ElementUI from 'element-ui'
+import '@/assets/stylesheets/element-ui-theme-my/theme/index.css'
+Vue.use(ElementUI)
+
+import store from './store'
+import router from '@/router/index'
+
+Vue.config.productionTip = false
+
+new Vue
+({
+    store: store,
+    router: router,
+    render: h => h(App)
+})
+.$mount('#app')
