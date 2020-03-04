@@ -1,0 +1,14 @@
+
+*.typescript中，以方括号形式访问对象属性报错
+    只是报错，编译是通过的
+    在tsconfig中设置
+        "suppressImplicitAnyIndexErrors": true
+
+*.跨域问题
+    老生常谈了
+    在服务端的响应服务上设置
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods:*');
+        header('Access-Control-Allow-Headers:*');
+    偷懒全写*了，实际可以写更具体
+    

@@ -1,19 +1,24 @@
 <template>
-    <div>
-
+    <div id="stick-element" class="demo">
+        <sidebar></sidebar>
+        <div class="region case">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 
 
 <script lang="ts">
+    import Sidebar from './sidebar.vue'
+
     import Vue from 'vue'
 
     export default Vue.extend
     ({
         components: 
         {
-            
+            "sidebar": Sidebar,
         },
         data()
         {

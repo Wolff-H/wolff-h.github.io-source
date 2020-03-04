@@ -20,6 +20,11 @@
             >
                 Github
             </div>
+            <div class="entry site-source-repo"
+                @click="jumpToSiteSourceRepo()"
+            >
+                Source Repo
+            </div>
             <div class="entry site-repo"
                 @click="jumpToSiteRepo()"
             >
@@ -63,6 +68,10 @@
             jumpToSiteRepo() :void
             {
                 window.open('https://github.com/Wolff-H/wolff-h.github.io', '_blank')
+            },
+            jumpToSiteSourceRepo() :void
+            {
+                window.open('https://github.com/Wolff-H/wolff-h.github.io-source', '_blank')
             },
         },
     })
@@ -109,13 +118,7 @@
                 &:hover
                     background-color $blue50
             
-            >.entry.github
-                float right
-                background-color $black40
-                &:hover
-                    background-color $black30
-
-            >.entry.site-repo
+            >.entry.github, >.entry.site-repo, >.entry.site-source-repo
                 float right
                 background-color $black40
                 &:hover

@@ -2,7 +2,6 @@
     <div id="drag-scroll" class="demo">
         <sidebar></sidebar>
         <div class="region case">
-            drag-scroll
             <router-view></router-view>
         </div>
     </div>

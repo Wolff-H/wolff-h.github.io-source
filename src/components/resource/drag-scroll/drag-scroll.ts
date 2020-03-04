@@ -2,55 +2,64 @@
 
 function mousedownHandler(event:any, element:any)
 {
-    // 记录按点 //
-    element.DragScrollData.start_pos.x = event.clientX
-    element.DragScrollData.start_pos.y = event.clientY
+    if(!element.DragScrollData.specs.disabled)
+    {
+        // 记录按点 //
+        element.DragScrollData.start_pos.x = event.clientX
+        element.DragScrollData.start_pos.y = event.clientY
 
-    // 记录容器既有滚动 //
-    element.DragScrollData.scroll_original.x = element.DragScrollData.specs.container.scrollLeft
-    element.DragScrollData.scroll_original.y = element.DragScrollData.specs.container.scrollTop
+        // 记录容器既有滚动 //
+        element.DragScrollData.scroll_original.x = element.DragScrollData.specs.container.scrollLeft
+        element.DragScrollData.scroll_original.y = element.DragScrollData.specs.container.scrollTop
 
-    // 更改状态 //
-    element.DragScrollData.if_dragging = true
+        // 更改状态 //
+        element.DragScrollData.if_dragging = true
+    }
 }
 
 function mousemoveHandler(event:any, element:any)
 {
-    if(element.DragScrollData.if_dragging)
+    if(!element.DragScrollData.specs.disabled)
     {
-        // 拖动，以指定度量 //
-        let drag_x = (element.DragScrollData.start_pos.x - event.clientX) / element.DragScrollData.specs.x.drag_scale
-        let drag_y = (element.DragScrollData.start_pos.y - event.clientY) / element.DragScrollData.specs.y.drag_scale
+        if(element.DragScrollData.if_dragging)
+        {
+            // 拖动，以指定度量 //
+            let drag_x = Math.ceil((element.DragScrollData.start_pos.x - event.clientX) / element.DragScrollData.specs.x.drag_scale)
+            let drag_y = Math.ceil((element.DragScrollData.start_pos.y - event.clientY) / element.DragScrollData.specs.y.drag_scale)
 
-        let scroll_x, scroll_y
+            let scroll_x, scroll_y
 
-        // 滚动，以指定度量、翻转 //
-        if(!element.DragScrollData.specs.reverse)
-        {
-            scroll_x = drag_x * element.DragScrollData.specs.x.scroll_scale
-            scroll_y = drag_y * element.DragScrollData.specs.y.scroll_scale
-        }
-        else
-        {
-            scroll_x = drag_y * element.DragScrollData.specs.x.scroll_scale
-            scroll_y = drag_x * element.DragScrollData.specs.y.scroll_scale
-        }
+            // 滚动，以指定度量、翻转 //
+            if(!element.DragScrollData.specs.swapped)
+            {
+                scroll_x = drag_x * element.DragScrollData.specs.x.scroll_scale
+                scroll_y = drag_y * element.DragScrollData.specs.y.scroll_scale
+            }
+            else
+            {
+                scroll_x = drag_y * element.DragScrollData.specs.x.scroll_scale
+                scroll_y = drag_x * element.DragScrollData.specs.y.scroll_scale
+            }
 
-        // 滚动，以指定启用、方向 //
-        if(element.DragScrollData.specs.x.move != 0)
-        {
-            element.DragScrollData.specs.container.scrollLeft = scroll_x * element.DragScrollData.specs.x.move + element.DragScrollData.scroll_original.x
-        }
-        if(element.DragScrollData.specs.y.move != 0)
-        {
-            element.DragScrollData.specs.container.scrollTop = scroll_y * element.DragScrollData.specs.y.move + element.DragScrollData.scroll_original.y
+            // 滚动，以指定启用、方向 //
+            if(element.DragScrollData.specs.x.move != 0)
+            {
+                element.DragScrollData.specs.container.scrollLeft = scroll_x * element.DragScrollData.specs.x.move + element.DragScrollData.scroll_original.x
+            }
+            if(element.DragScrollData.specs.y.move != 0)
+            {
+                element.DragScrollData.specs.container.scrollTop = scroll_y * element.DragScrollData.specs.y.move + element.DragScrollData.scroll_original.y
+            }
         }
     }
 }
 
 function mouseupHandler(event:any, element:any)
 {
-    element.DragScrollData.if_dragging = false
+    if(!element.DragScrollData.specs.disabled)
+    {
+        element.DragScrollData.if_dragging = false
+    }
 }
 
 function dragScroll(specs_input:any)
@@ -76,8 +85,9 @@ function dragScroll(specs_input:any)
             drag_scale: 1,
             scroll_scale: 1,
         },
-        reverse: false,
+        swapped: false,
         destroy: false,
+        disabled: false,
     }
 
     let specs = Object.assign({}, specs_default, specs_input)
@@ -112,9 +122,9 @@ function dragScroll(specs_input:any)
 
 
     // 储存参数 ------------------------------------------------------------------------------------
-    let element = specs.element
+    let element = specs.element    // 别名引用
 
-    // 仅更新配置 //
+    // 更新配置 //
     if(element.hasOwnProperty('DragScrollData'))
     {
         element.DragScrollData =
@@ -160,8 +170,6 @@ function dragScroll(specs_input:any)
     /*
         这个囿于js的机制，没法实现
     */
-
-    
 }
 
 

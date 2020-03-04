@@ -50,6 +50,15 @@
                 background-color $black03
                 border-right 1px solid $black40
                 overflow-y scroll
+        
+                *
+                    user-select none
+                
+                li
+                    cursor default
+
+                li.entry.o-selected
+                    background-color $blue20
 
                 ul
                     list-style-type none
@@ -68,7 +77,7 @@
                     width 100%
                     height 40px
                     padding-left 24px
-                    &:hover
+                    &:not(.o-selected):hover
                         background-color $black10
 
             >.region.case
@@ -77,6 +86,17 @@
                 left 384px
                 width calc(100% - 384px)
                 height 100%
+                padding 10px
+                overflow auto
+
+                >.case
+                    width 100%
+                    height 100%
+
+                    pre
+                        font-family microsoft yahei mono
+                        font-size 16px
+
 
 
 </style>

@@ -18,7 +18,7 @@
         "src/*"
       ],
       "plotly.js": [
-        "./node_modules/plotly.js/lib/core.js"
+        "./node_modules/plotly.js/lib/core.js", "./node_modules/plotly.js/lib/bar.js"
       ]
     },
     "lib": [
@@ -26,7 +26,8 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
     "src/**/*.js",    // 这条是我新加的

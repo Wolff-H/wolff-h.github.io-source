@@ -1,0 +1,98 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<!-- <script type="module">
+    //import { stickElement } from "./stick-element.js";
+    import defaultExport from "./stick-element.mjs";
+</script> -->
+
+<script src="./stick-element.js" charset="utf-8"></script>
+
+<style media="screen">
+    *{
+        box-sizing: border-box;
+    }
+    #container{
+        width: 902px;
+        height: 602px;
+        margin: 100px;
+        border: 1px solid black;
+        overflow: scroll;
+    }
+    #element{
+        width: 200px;
+        height: 100px;
+        background-color: coral;
+
+    }
+    table{
+        margin: 100px;
+    }
+    table td{
+        width: 400px;
+        min-width: 400px;
+        height: 200px;
+        min-height: 200px;
+        border: 1px solid grey;
+        background-color: lightgrey;
+    }
+    table th{
+        position: relative;
+        height: 100px;
+        border: 1px solid grey;
+        background-color: coral;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <table>
+            <thead>
+                <tr>
+                    <th id="th1">
+                        表头1
+                    </th>
+                    <th id="th2">
+                        表头2
+                    </th>
+                    <th id="th3">
+                        表头3
+                    </th>
+                    <th id="th4">
+                        表头4
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>32</td>
+                    <td>33</td>
+                    <td>34</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>42</td>
+                    <td>43</td>
+                    <td>44</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -6,7 +6,7 @@
                 <ul>
                     <li>
                         <a class="entry"
-                            href="https://github.com/Wolff-H/drag-scroll/blob/master/README.md"
+                            href="https://github.com/Wolff-H/stick-element/blob/master/README.md"
                             target="_blank"
                         >
                             readme
@@ -14,7 +14,7 @@
                     </li>
                     <li>
                         <a class="entry"
-                            href="https://github.com/Wolff-H/drag-scroll/"
+                            href="https://github.com/Wolff-H/stick-element/"
                             target="_blank"
                         >
                             github
@@ -63,13 +63,9 @@
                 cases:
                 {
                     '0':     ['' , 'basic'],
-                    '1':     ['1', 'seperate element and container'],
-                    '2':     ['2', 'scroll only on one axis'],
-                    '3':     ['3', 'reverse scroll direction'],
-                    '4':     ['4', 'swap controls'],
-                    '5':     ['5', 'scaled drag and scroll'],
-                    '6':     ['6', 'update & disable an existing drag-scroll'],
-                    '7':     ['7', 'Example: a dragscrollable table'],
+                    '1':     ['1', 'cross-level sticky'],
+                    '2':     ['2', 'update/disable/distroy stick-element'],
+                    '3':     ['3', 'case 3'],
                 }
             }
         },
@@ -79,7 +75,7 @@
             {
                 if(case_name != this.using_case)
                 {
-                    this.$router.push({path: `/demos/drag-scroll/${this.cases[case_name][0]}`})
+                    this.$router.push({path: `/demos/stick-element/${this.cases[case_name][0]}`})
                 }
 
                 this.using_case = case_name
@@ -106,15 +102,6 @@
     // stateful ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // basic ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // .sidebar
-        
-    //     *
-    //         user-select none
-        
-    //     li
-    //         cursor default
-
-    //     li.entry.o-selected
-    //         background-color $blue20
+    
 
 </style>
