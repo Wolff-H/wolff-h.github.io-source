@@ -38,6 +38,12 @@
         >
             github
         </el-button>
+        <el-button class="button to-project-report"
+            size="small"
+            @click="jumpToProjectReport()"
+        >
+            project report
+        </el-button>
         <div class="main">
             <el-tabs class="tabs"
                 type="border-card"
@@ -346,6 +352,11 @@
                 window.open('https://github.com/Wolff-H/COMP-3-201', '_blank')
             },
 
+            jumpToProjectReport() :void
+            {
+                window.open('https://github.com/Wolff-H/COMP-3-201/blob/master/Project/COMP3201FinalProjectReport.pdf', '_blank')
+            },
+
             // 0 //
             drawExperiment()
             {
@@ -440,6 +451,11 @@
         .button.to-github-repo
             position absolute
             left 80px
+            top 10px
+        
+        .button.to-project-report
+            position absolute
+            left 142px
             top 10px
 
         >.main

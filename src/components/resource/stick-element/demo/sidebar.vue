@@ -20,6 +20,14 @@
                             github
                         </a>
                     </li>
+                    <li>
+                        <a class="entry"
+                            href="https://www.npmjs.com/package/stick-element"
+                            target="_blank"
+                        >
+                            npm
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -65,7 +73,7 @@
                     '0':     ['' , 'basic'],
                     '1':     ['1', 'cross-level sticky'],
                     '2':     ['2', 'update/disable/distroy stick-element'],
-                    '3':     ['3', 'case 3'],
+                    '3':     ['3', 'capture behaviour'],
                 }
             }
         },

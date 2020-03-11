@@ -48,15 +48,6 @@
             code
         </h3>
         <br>
-        <h4>
-            select element/container by passing a reference (e.g. in a Vue component)
-        </h4>
-        <pre>
-            
-        </pre>
-        <h4>
-            select element/container with a selector string
-        </h4>
         <pre>
             
         </pre>

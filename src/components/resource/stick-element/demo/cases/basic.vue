@@ -34,13 +34,34 @@
             select element/container by passing a reference (e.g. in a Vue component)
         </h4>
         <pre>
-            
+            stickElement
+            (
+                {
+                    element: this.$refs.element1,
+                    container: this.$refs.container,
+                    offset_limits:
+                    {
+                        top: 50,
+                        left: 50,
+                    },
+                }
+            )
         </pre>
         <h4>
             select element/container with a selector string
         </h4>
         <pre>
-            
+            stickElement
+            (
+                {
+                    element: '#stick-element .case.basic element2',
+                    container: '#stick-element .case.basic container',
+                    offset_limits:
+                    {
+                        left: 50,
+                    },
+                }
+            )
         </pre>
     </div>
 </template>

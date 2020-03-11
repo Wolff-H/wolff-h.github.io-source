@@ -6,7 +6,6 @@
             @change="routeToDemo()"
         >
             <el-option label="drag-scroll" value="drag-scroll"></el-option>
-            <el-option label="float-element" value="float-element"></el-option>
             <el-option label="in-viewport" value="in-viewport"></el-option>
             <el-option label="stick-element" value="stick-element"></el-option>
             <el-option label="TSP-graphing" value="TSP-graphing"></el-option>
@@ -55,6 +54,10 @@
                 if(this.using_demo != this.$router.currentRoute.fullPath)
                 {
                     this.$router.push({path: `/demos/${this.using_demo}`})
+                }
+                else
+                {
+                    this.$router.go(0)
                 }
             },
             refresh() :void

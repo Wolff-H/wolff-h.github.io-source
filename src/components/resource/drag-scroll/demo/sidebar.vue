@@ -20,6 +20,14 @@
                             github
                         </a>
                     </li>
+                    <li>
+                        <a class="entry"
+                            href="https://www.npmjs.com/package/@wolff-h/drag-scroll"
+                            target="_blank"
+                        >
+                            npm
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li>

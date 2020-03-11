@@ -67,6 +67,9 @@
                             </tbody>
                         </table>
                     </td>
+                    <td class="shadow-margin">
+                        <!-- shadow margin -->
+                    </td>
                 </tr>
             </table>
         </div>
@@ -262,6 +265,10 @@
                     width 55px
                     height 100%
                     background-color $shadow20
+            
+            .shadow-margin
+                min-width 50px
+                height 100%
 
 
 

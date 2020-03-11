@@ -24,6 +24,9 @@ import StickElement_case_basic from '@/components/resource/stick-element/demo/ca
 import StickElement_case_1 from '@/components/resource/stick-element/demo/cases/1.vue'
 import StickElement_case_2 from '@/components/resource/stick-element/demo/cases/2.vue'
 
+// in-viewport ---------------------------------------------------------------------------------------------------------
+import InViewport from '@/components/resource/in-viewport/demo/index.vue'
+
 // TSP-graphing --------------------------------------------------------------------------------------------------------
 import TSPGraphing from '@/components/resource/TSP-graphing/demo/index.vue'
 
@@ -100,6 +103,10 @@ const routes =
                         component: StickElement_case_2,
                     },
                 ],
+            },
+            {
+                path: "in-viewport",
+                component: InViewport,
             },
             {
                 path: "TSP-graphing",

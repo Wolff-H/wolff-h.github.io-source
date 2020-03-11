@@ -62,7 +62,29 @@
         </h3>
         <br>
         <pre>
-            
+            stickElement
+            (
+                {
+                    element: this.$refs.th1,
+                    container: this.$refs.container,
+                    offset_limits:
+                    {
+                        top: 50,
+                    }
+                }
+            )
+            stickElement
+            (
+                {
+                    element: this.$refs.td22,
+                    container: this.$refs.container,
+                    offset_limits:
+                    {
+                        top: 200,
+                        left: 200,
+                    }
+                }
+            )
         </pre>
     </div>
 </template>

@@ -1,6 +1,7 @@
 <template>
     <div id="home">
         <div class="front">
+            <!-- <img src="@/assets/images/desktop.jpeg" alt=""> -->
             <div class="title">
                 Wolff-H's github site
             </div>
@@ -86,9 +87,13 @@
     #home
 
         >.front
-            height 400px
+            height 432px
             background-color #159957
-            background-image linear-gradient(120deg, #155799, #159957)
+            // background-image linear-gradient(120deg, #155799, #159957)
+            background-image url('~@/assets/images/desktop.jpeg')
+            background-size 100%
+            // background-position-y -500px
+            background-position bottom
     
             >.title
                 font-size 48px
