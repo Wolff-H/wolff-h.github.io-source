@@ -5,10 +5,11 @@
             placeholder="select a project"
             @change="routeToDemo()"
         >
-            <el-option label="drag-scroll" value="drag-scroll"></el-option>
-            <el-option label="in-viewport" value="in-viewport"></el-option>
-            <el-option label="stick-element" value="stick-element"></el-option>
-            <el-option label="TSP-graphing" value="TSP-graphing"></el-option>
+            <el-option label="drag-scroll"      value="drag-scroll"     ></el-option>
+            <el-option label="in-viewport"      value="in-viewport"     ></el-option>
+            <el-option label="stick-element"    value="stick-element"   ></el-option>
+            <el-option label="TSP-graphing"     value="TSP-graphing"    ></el-option>
+            <el-option label="smart-algorithms" value="smart-algorithms"></el-option>
         </el-select>
         <!-- <img class="operation refresh"
             alt="refresh"
@@ -19,6 +20,7 @@
             alt="home"
             src="@/assets/icons/other/home.svg"
             @click="routeToHome()"
+            title="home"
         >
     </div>
 </template>

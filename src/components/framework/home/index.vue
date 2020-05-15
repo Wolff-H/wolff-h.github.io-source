@@ -33,13 +33,50 @@
             </div>
         </div>
         <div class="demos-list">
-            <div class="preview"></div>
-            <div class="preview"></div>
-            <div class="preview"></div>
-            <div class="preview"></div>
-            <div class="preview"></div>
-            <div class="preview"></div>
-            <div class="preview"></div>
+            <el-popover popper-class="project-preview-popover"
+                content="drag-scroll"
+                trigger="hover"
+            >
+                <div class="preview"
+                    slot="reference"
+                    @click="routeToDemo('drag-scroll')"
+                >
+                    <img src="@/assets/images/demo-previews/drag-scroll.png" alt="drag-scroll">
+                </div>
+            </el-popover>
+            <el-popover popper-class="project-preview-popover"
+                content="stick-element"
+                trigger="hover"
+            >
+                <div class="preview"
+                    slot="reference"
+                    @click="routeToDemo('stick-element')"
+                >
+                    <img src="@/assets/images/demo-previews/stick-element.png" alt="stick-element">
+                </div>
+            </el-popover>
+            <el-popover popper-class="project-preview-popover"
+                content="tsp-graphing"
+                trigger="hover"
+            >
+                <div class="preview"
+                    slot="reference"
+                    @click="routeToDemo('tsp-graphing')"
+                >
+                    <img src="@/assets/images/demo-previews/tsp-graphing.png" alt="tsp-graphing">
+                </div>
+            </el-popover>
+            <el-popover popper-class="project-preview-popover"
+                content="smart-algorithms"
+                trigger="hover"
+            >
+                <div class="preview"
+                    slot="reference"
+                    @click="routeToDemo('smart-algorithms')"
+                >
+                    <img src="@/assets/images/demo-previews/smart-algorithms.png" alt="smart-algorithms">
+                </div>
+            </el-popover>
         </div>
     </div>
 </template>
@@ -73,6 +110,10 @@
             jumpToSiteSourceRepo() :void
             {
                 window.open('https://github.com/Wolff-H/wolff-h.github.io-source', '_blank')
+            },
+            routeToDemo(demo_name:string) :void
+            {
+                this.$router.push({ path: `/demos/${demo_name}` })
             },
         },
     })
@@ -134,11 +175,28 @@
             padding 20px 20%
             flex-wrap wrap
 
-            >.preview
-                width 200px
-                height 200px
+            .preview
+                display flex
+                align-items center
+                width 268px
+                height 268px
                 border 1px solid $black20
                 margin 0px 20px 20px 0px
+                cursor pointer
+                &:hover
+                    box-shadow: 0px 0px 10px $blue60
+
+                >img
+                    // height 100%
+                    width 100%
+    
+    body
+        
+        .project-preview-popover.el-popover
+            padding 12px
+            min-width initial
+            font-size 16px
+            font-weight bold
 
         
 

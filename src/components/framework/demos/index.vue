@@ -70,6 +70,8 @@
                     height 48px
                     font-size 24px
                     padding-left 8px
+                    // color $black60
+                    // background-color $black10
 
                 .entry
                     display flex

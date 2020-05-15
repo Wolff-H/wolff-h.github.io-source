@@ -23,12 +23,23 @@ import StickElement from '@/components/resource/stick-element/demo/index.vue'
 import StickElement_case_basic from '@/components/resource/stick-element/demo/cases/basic.vue'
 import StickElement_case_1 from '@/components/resource/stick-element/demo/cases/1.vue'
 import StickElement_case_2 from '@/components/resource/stick-element/demo/cases/2.vue'
+import StickElement_case_3 from '@/components/resource/stick-element/demo/cases/3.vue'
 
 // in-viewport ---------------------------------------------------------------------------------------------------------
 import InViewport from '@/components/resource/in-viewport/demo/index.vue'
 
 // TSP-graphing --------------------------------------------------------------------------------------------------------
 import TSPGraphing from '@/components/resource/TSP-graphing/demo/index.vue'
+
+// smart-algorithms ----------------------------------------------------------------------------------------------------
+import SmartAlgorithms from '@/components/resource/smart-algorithms/demo/index.vue'
+// cases //
+import SmartAlgorithms_case_Content from '@/components/resource/smart-algorithms/demo/cases/content/index.vue'
+import SmartAlgorithms_case_AstarPathfinding from '@/components/resource/smart-algorithms/demo/cases/a-star-pathfinding/index.vue'
+import SmartAlgorithms_case_MultiArmedBandit from '@/components/resource/smart-algorithms/demo/cases/multi-armed-bandit/index.vue'
+import SmartAlgorithms_case_RLQLearning from '@/components/resource/smart-algorithms/demo/cases/rl-q-learning/index.vue'
+import SmartAlgorithms_case_AlphaBetaMethod from '@/components/resource/smart-algorithms/demo/cases/alpha-beta-method/index.vue'
+import SmartAlgorithms_case_JPSPathfinding from '@/components/resource/smart-algorithms/demo/cases/jps-pathfinding/index.vue'
 
 /**********************************************************************************************************************/
 const routes =
@@ -102,6 +113,10 @@ const routes =
                         path: "2",
                         component: StickElement_case_2,
                     },
+                    {
+                        path: "3",
+                        component: StickElement_case_3,
+                    },
                 ],
             },
             {
@@ -111,6 +126,37 @@ const routes =
             {
                 path: "TSP-graphing",
                 component: TSPGraphing,
+            },
+            {
+                path: "smart-algorithms",
+                component: SmartAlgorithms,
+                children:
+                [
+                    {
+                        path: "",
+                        component: SmartAlgorithms_case_Content,
+                    },
+                    {
+                        path: "a-star-pathfinding",
+                        component: SmartAlgorithms_case_AstarPathfinding,
+                    },
+                    {
+                        path: "multi-armed-bandit",
+                        component: SmartAlgorithms_case_MultiArmedBandit,
+                    },
+                    {
+                        path: "rl-q-learning",
+                        component: SmartAlgorithms_case_RLQLearning,
+                    },
+                    {
+                        path: "alpha-beta-method",
+                        component: SmartAlgorithms_case_AlphaBetaMethod,
+                    },
+                    {
+                        path: "jps-pathfinding",
+                        component: SmartAlgorithms_case_JPSPathfinding,
+                    },
+                ],
             },
         ],
     },

@@ -1,14 +1,14 @@
 <template>
     <div id="in-viewport" class="demo">
         <p>
-            This library is no more required, as there's a modern
+            This library is no more required nowadays, instead please use the modern
             <a 
                 href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
                 target="_blank"
             >
                 Intersection_Observer_API
             </a>
-            available nowadays.
+            .
         </p>
     </div>
 </template>
