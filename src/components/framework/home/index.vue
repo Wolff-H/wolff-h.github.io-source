@@ -7,7 +7,9 @@
             </div>
             <div class="subtitle">
                 The site is especially for hosting my project demos, or recording information. <br>
-                Please feel free to open issue if you find any bugs or have some suggestions.
+                Please feel free to open issue if you find any bugs or have some suggestions. <br>
+                <br>
+                Happy coding! \(^o^)/
             </div>
         </div>
         <div class="entries">
@@ -15,6 +17,11 @@
                 @click="routeToDemos()"
             >
                 Demos
+            </div>
+            <div class="entry resume"
+                @click="jumpToResume()"
+            >
+                Resume
             </div>
             <div class="entry github"
                 @click="jumpToGithub()"
@@ -99,6 +106,10 @@
                 this.$router.push({path: '/demos'})
                 // this.$router.push({path: '/demos/dragscroll'})
             },
+            jumpToResume() :void
+            {
+                window.open('./single-files/Resume-Tingrui_Hu.pdf', '_blank')
+            },
             jumpToGithub() :void
             {
                 window.open('https://github.com/Wolff-H/', '_blank')
@@ -163,6 +174,11 @@
                 background-color $blue60
                 &:hover
                     background-color $blue50
+            
+            >.entry.resume
+                background-color $black70
+                &:hover
+                    background-color $black60
             
             >.entry.github, >.entry.site-repo, >.entry.site-source-repo
                 float right

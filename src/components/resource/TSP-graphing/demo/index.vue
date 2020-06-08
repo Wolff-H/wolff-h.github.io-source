@@ -431,6 +431,15 @@
         {
             DrawingModule.getTestJsonFile()
             this.plain_map.WesternSahara = DrawingModule.parseCoords(coords_WesternSahara)
+
+            // automatically fetched the default dataset //
+            this.$nextTick(
+                () =>
+                {
+                    this.using_instance = 'WesternSahara'
+                    this.useInstance()
+                }
+            )
         },
     })
 </script>
