@@ -123,7 +123,7 @@
                 v-model="using_algorithm"
                 placeholder="select an algorithm"
             >
-                <el-option :key="0" :value="'basic'" disabled>basic</el-option>
+                <el-option :key="0" :value="'basic'">basic</el-option>
                 <el-option :key="1" :value="'advanced'">advanced</el-option>
             </el-select>
             <el-button class="dashboard button"
@@ -294,7 +294,12 @@
                                     }
                                     else
                                     {
-                                        this.$notify({title: 'data unavailable', message: ''})
+                                        this.$notify(
+                                            {
+                                                title: 'data unavailable',
+                                                message: `Server responded: ${'no such dataset'}`,
+                                            }
+                                        )
                                     }
                                 }
                             )
